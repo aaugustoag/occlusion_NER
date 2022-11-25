@@ -46,7 +46,10 @@ def load_data_and_labels(filename):
                     labels.append(tags)
                     words, tags = [], []
             else:
-                word, tag = line.split('\t')
+                lines = line.split(' ')
+                print(lines)
+                word = lines[0]
+                tag = lines[-1]
                 words.append(word.lower())
                 tags.append(tag)
     return np.asarray(sents), np.asarray(labels)
