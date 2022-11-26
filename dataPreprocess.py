@@ -47,7 +47,6 @@ def load_data_and_labels(filename):
                     words, tags = [], []
             else:
                 lines = line.split(' ')
-                print(lines)
                 word = lines[0]
                 tag = lines[-1]
                 words.append(word.lower())
