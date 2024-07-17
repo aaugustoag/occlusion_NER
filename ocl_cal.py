@@ -38,6 +38,7 @@ def oclusion (sentence, tag_list, word_idx_target, tag_target, trained_model):
 
     delta_scores = pred_matrix-ocl_matrix[word_idx_target]
     scr_list = torch.from_numpy(delta_scores.T[idxTag])
-    sorted_scr_list = torch.sort(scr_list.abs(), descending =True)
+    scr_list_abs = scr_list.abs()
+    sorted_scr_list = torch.sort(scr_list_abs, descending =True)
 
     return sorted_scr_list
